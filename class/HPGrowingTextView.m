@@ -96,6 +96,12 @@
     internalTextView.displayPlaceHolder = YES;
 }
 
+- (void)dealloc
+{
+    [internalTextView release]; internalTextView = nil;
+    [super dealloc];
+}
+
 -(CGSize)sizeThatFits:(CGSize)size
 {
     if (self.text.length == 0) {
