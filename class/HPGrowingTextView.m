@@ -88,6 +88,12 @@
     [self setMaxNumberOfLines:3];
 }
 
+- (void)dealloc
+{
+    [internalTextView release]; internalTextView = nil;
+    [super dealloc];
+}
+
 -(CGSize)sizeThatFits:(CGSize)size
 {
     if (self.text.length == 0) {
